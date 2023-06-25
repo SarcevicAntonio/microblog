@@ -9,14 +9,15 @@
 </form>
 
 <ul>
-	{#each data.post_list.items as item}
+	{#each data.post_list.items as { created, post, id }}
 		<li>
-			<small>{new Date(item.created).toLocaleString()}</small>
-			<p>{item.post}</p>
+			<small>{new Date(created).toLocaleString()}</small>
+			<p>{post}</p>
 			<form method="POST" action="?/delete">
-				<input name="id" value={item.id} hidden />
+				<input name="id" value={id} hidden />
 				<button>delete</button>
 			</form>
+			<a href="/update/{id}">update</a>
 		</li>
 	{/each}
 </ul>

@@ -11,7 +11,13 @@ export async function load({ locals, url }) {
 export const actions = {
 	post: async ({ request, locals }) => {
 		const { post } = Object.fromEntries(await request.formData())
-		await locals.pb.collection('posts').create({ post, author: locals.pb.authStore.model?.id })
+
+		try {
+			await locals.pb.collection('posts').create({ post, author: locals.pb.authStore.model?.id })
+		} catch (error) {
+			console.error(error)
+			throw error
+		}
 	},
 	delete: async ({ request, locals }) => {
 		const { id } = Object.fromEntries(await request.formData())
