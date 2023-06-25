@@ -9,8 +9,12 @@ export async function load({ locals, url }) {
 }
 
 export const actions = {
-	default: async ({ request, locals }) => {
+	post: async ({ request, locals }) => {
 		const { post } = Object.fromEntries(await request.formData())
 		await locals.pb.collection('posts').create({ post, author: locals.pb.authStore.model?.id })
+	},
+	delete: async ({ request, locals }) => {
+		const { id } = Object.fromEntries(await request.formData())
+		await locals.pb.collection('posts').delete(id.toString())
 	},
 }
