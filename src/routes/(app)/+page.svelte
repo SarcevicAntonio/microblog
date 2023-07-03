@@ -1,8 +1,7 @@
 <script>
-	import { marked } from 'marked'
+	import { render_markdown } from '$lib/markdown'
 	export let data
 </script>
-
 
 <ul>
 	{#each data.post_list.items as { created, body, id }}
@@ -10,8 +9,7 @@
 			<a href="/{id}">
 				<small>{new Date(created).toLocaleString()}</small>
 			</a>
-			<!-- TODO: sanitize @html -->
-			<article>{@html marked(body)}</article>
+			<article>{@html render_markdown(body)}</article>
 		</li>
 	{/each}
 </ul>

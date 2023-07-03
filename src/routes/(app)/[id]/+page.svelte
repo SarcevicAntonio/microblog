@@ -1,12 +1,11 @@
 <script>
-	import { marked } from 'marked'
+	import { render_markdown } from '$lib/markdown'
 
 	export let data
 </script>
 
 <small>{new Date(data.post.created).toLocaleString()}</small>
-
-<article>{@html marked(data.post.body)}</article>
+<article>{@html render_markdown(data.post.body)}</article>
 
 <nav>
 	<a href="/">👈 back</a>
