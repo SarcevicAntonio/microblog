@@ -10,7 +10,7 @@
 			<a href="/register">➕ register</a>
 			<a href="/login">🔑 login</a>
 		{:else}
-			<a href="/logout">🚪 logout</a>
+			<a href="/logout" data-sveltekit-preload-data="off">🚪 logout</a>
 			<a href="/new">🆕 new</a>
 		{/if}
 	</nav>
