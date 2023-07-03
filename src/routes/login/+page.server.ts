@@ -9,7 +9,7 @@ export const actions = {
 				.collection('users')
 				.authWithPassword(data.email.toString(), data.password.toString())
 		} catch (error) {
-			console.log(error)
+			console.error(error)
 			throw error
 		}
 
