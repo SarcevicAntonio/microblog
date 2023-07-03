@@ -12,7 +12,8 @@ export async function load({ locals, url }) {
 			post_list: structuredClone(post_list),
 		}
 	} catch (e) {
-		if (e instanceof ClientResponseError) console.warn('ClientResponseError: is PocketBase running?')
+		if (e instanceof ClientResponseError)
+			console.warn('ClientResponseError: is PocketBase running?')
 		throw e
 	}
 }
