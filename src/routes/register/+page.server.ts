@@ -5,7 +5,7 @@ export const actions = {
 		const data = Object.fromEntries(await request.formData())
 
 		try {
-			await locals.pb.collection('users').create(data)
+			await locals.pb.collection('users').create({ ...data, emailVisibility: true })
 			await locals.pb
 				.collection('users')
 				.authWithPassword(data.email.toString(), data.password.toString())

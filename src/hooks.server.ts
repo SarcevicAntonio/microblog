@@ -1,9 +1,9 @@
-import { PUBLIC_POCKETBASE_URL } from '$env/static/public'
+import { POCKETBASE_URL } from '$env/static/private'
 import type { Handle } from '@sveltejs/kit'
 import PocketBase from 'pocketbase'
 
 export const handle: Handle = async ({ event, resolve }) => {
-	event.locals.pb = new PocketBase(PUBLIC_POCKETBASE_URL)
+	event.locals.pb = new PocketBase(POCKETBASE_URL)
 
 	// load the store data from the request cookie string
 	event.locals.pb.authStore.loadFromCookie(event.request.headers.get('cookie') || '')

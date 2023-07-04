@@ -7,7 +7,9 @@
 <header>
 	<nav>
 		{#if !data.user}
-			<a href="/register">➕ register</a>
+			{#if !data.poster}
+				<a href="/register">➕ register</a>
+			{/if}
 			<a href="/login">🔑 login</a>
 		{:else}
 			<a href="/logout" data-sveltekit-preload-data="off">🚪 logout</a>
