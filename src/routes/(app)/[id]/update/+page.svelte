@@ -8,8 +8,6 @@
 	<button>update</button>
 </form>
 
-<a href="/">👈 back</a>
-
 <style>
 	textarea,
 	button {

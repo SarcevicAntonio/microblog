@@ -13,10 +13,3 @@
 		</li>
 	{/each}
 </ul>
-
-<style>
-	textarea,
-	button {
-		display: block;
-	}
-</style>
