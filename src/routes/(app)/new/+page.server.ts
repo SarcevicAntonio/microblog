@@ -1,8 +1,7 @@
 import { error, redirect } from '@sveltejs/kit'
 
-export async function load({ parent }) {
-	const data = await parent()
-	if (!data.user) throw error(401, 'login pls')
+export async function load({ locals }) {
+	if (!locals.pb.authStore.model) throw error(401, 'login pls')
 }
 
 export const actions = {
