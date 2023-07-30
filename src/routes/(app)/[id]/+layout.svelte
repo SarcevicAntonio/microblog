@@ -7,8 +7,10 @@
 {#if !data.post}
 	No Post Found
 {:else}
-	<small>{new Date(data.post.created).toLocaleString()}</small>
-	<article>{@html render_markdown(data.post.body)}</article>
+	<div class="post-box">
+		<small>{new Date(data.post.created).toLocaleString()}</small>
+		<article>{@html render_markdown(data.post.body)}</article>
+	</div>
 
 	<nav>
 		<a href="/">👈 back</a>
