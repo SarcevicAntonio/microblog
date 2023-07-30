@@ -5,11 +5,13 @@
 
 <ul>
 	{#each data.post_list.items as { created, body, id }}
-		<li>
-			<a href="/{id}">
-				<small>{new Date(created).toLocaleString()}</small>
-			</a>
-			<article>{@html render_markdown(body)}</article>
+		<li class="post-box">
+			<article>
+				<a href="/{id}">
+					<small>{new Date(created).toLocaleString()}</small>
+				</a>
+				{@html render_markdown(body)}
+			</article>
 		</li>
 	{/each}
 </ul>
