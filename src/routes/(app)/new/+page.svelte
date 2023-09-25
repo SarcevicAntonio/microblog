@@ -3,11 +3,3 @@
 	<textarea name="body" placeholder="write something inspiring..." />
 	<button>📮 post</button>
 </form>
-
-<style>
-	textarea {
-		min-height: 30rem;
-		font: inherit;
-		padding: 1rem;
-	}
-</style>

@@ -9,9 +9,11 @@
 		{#each data.post_list.items as { created, body, id }}
 			<li class="post-box">
 				<article>
-					<a href="/{id}">
-						<date>{new Date(created).toLocaleString()}</date>
-					</a>
+					<aside>
+						<a href="/{id}">
+							<time datetime={created}>{new Date(created).toLocaleString()}</time>
+						</a>
+					</aside>
 					{@html render_markdown(body)}
 				</article>
 			</li>

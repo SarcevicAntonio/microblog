@@ -2,15 +2,7 @@
 	export let data
 </script>
 
-<form method="POST">
-	<input name="id" value={data.post.id} hidden />
+<form method="POST" class="main-form">
 	<textarea name="body" value={data.post.body} />
 	<button>update</button>
 </form>
-
-<style>
-	textarea,
-	button {
-		display: block;
-	}
-</style>
