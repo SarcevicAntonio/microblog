@@ -7,6 +7,8 @@
 	$: pathname = $page.url.pathname
 </script>
 
+<h1>✉️ post: /{data.post.id}</h1>
+
 {#if !data.post}
 	<p>❌ no post found</p>
 {:else}
