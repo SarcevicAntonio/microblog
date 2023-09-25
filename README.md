@@ -1,38 +1,22 @@
-# create-svelte
+# microblog
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+fuck that musk, run your own microblog
 
-## Creating a project
+## TODO
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [ ] deploy docs
+- [ ] thread support
+   - [ ] reference parent
+   - [ ] make thread view
+   - [ ] mark threads in timeline
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Deploy your own
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+// TODO
 
-## Developing
+## Setup Dev
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+1. download [pocketbase](https://pocketbase.io/docs/)
+1. run `./pocketbase serve`
+1. setup at [:8090/_/](http://127.0.0.1:8090/_/?installer#)
+1. run `pnpm dev`

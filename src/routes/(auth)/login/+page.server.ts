@@ -1,5 +1,9 @@
 import { redirect } from '@sveltejs/kit'
 
+export const load = async ({ locals }) => {
+	if (locals.pb.authStore.model) throw redirect(302, '/')
+}
+
 export const actions = {
 	default: async ({ request, locals }) => {
 		const data = Object.fromEntries(await request.formData())

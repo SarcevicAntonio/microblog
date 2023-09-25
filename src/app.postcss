@@ -1,12 +1,42 @@
-body {
-	font-family: sans-serif;
-	font-size: 1.5rem;
+@import '@fontsource-variable/jetbrains-mono/wght-italic.css';
+
+:root {
+	--back: oklch(17.33% 0.064 151.41);
+	--text: oklch(100% 0 151.41);
+	--accent: oklch(83.7% 0.323 143.5);
 }
 
-a {
+html {
+	background-color: var(--back);
+}
+
+body {
+	font-family: 'JetBrains Mono', sans-serif;
+	color: var(--text);
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+hr {
+	border-color: var(--accent);
+	border-style: dashed;
+	margin-block: 1rem;
+}
+
+a,
+button {
 	padding: 0.5rem;
 	box-sizing: content-box;
 	text-decoration: none;
+	background-color: var(--accent);
+	color: var(--back);
+	font: inherit;
+	border: none;
+
+	font-weight: 800;
 }
 
 a:hover,
@@ -14,9 +44,34 @@ a:focus {
 	text-decoration: underline;
 }
 
+input,
+textarea {
+	font: inherit;
+	background-color: inherit;
+	color: inherit;
+	border: 1px solid var(--accent);
+	padding: 0.25rem;
+}
+
+.main-form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	border: 1px solid var(--accent);
+	padding: 1rem;
+
+	& h1 {
+		margin-block-start: 0rem;
+	}
+}
+
 .post-box {
-	border: 1px solid black;
-	padding: 0.5rem 1rem;
-	margin: 0.25rem;
-	border-radius: 1rem;
+	border: 1px solid var(--accent);
+	padding: 1rem;
+}
+
+article a {
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	padding: 0.1rem;
 }

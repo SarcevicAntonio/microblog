@@ -1,5 +1,7 @@
 <script>
+	import { page } from '$app/stores'
 	import '../app.postcss'
+	import 'virtual:uno.css'
 
 	export let data
 </script>
@@ -8,26 +10,41 @@
 	<nav>
 		{#if !data.user}
 			{#if !data.poster}
-				<a href="/register">➕ register</a>
+				<a href="/register">➕🔐 register</a>
+			{:else}
+				<a href="/login">🔐 login</a>
 			{/if}
-			<a href="/login">🔑 login</a>
 		{:else}
-			<a href="/logout" data-sveltekit-preload-data="off">🚪 logout</a>
-			<a href="/new">🆕 new</a>
+			{#if $page.route.id !== '/(app)'}
+				<a href="/">📜 feed</a>
+			{:else}
+				<a href="/logout" data-sveltekit-preload-data="off">🚪 logout</a>
+			{/if}
+			<a href="/new">✏️ post</a>
 		{/if}
 	</nav>
 </header>
 
-<slot />
+<main>
+	<slot />
+</main>
 
-<style>
+<style lang="postcss">
 	nav {
 		display: flex;
 		gap: 1rem;
 		justify-content: space-between;
+		background: var(--accent);
+		& a {
+			border: 1px solid var(--back);
+		}
 
-		border-bottom: 0.1rem solid black;
-		padding-bottom: 0.5rem;
-		margin-bottom: 0.5rem;
+		padding: 0.5rem;
+	}
+
+	main {
+		padding-block-start: 2rem;
+		max-width: 50rem;
+		margin: auto;
 	}
 </style>

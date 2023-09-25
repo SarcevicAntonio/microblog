@@ -1,8 +1,9 @@
+import { authGuard } from '$lib/auth.js'
 import { error } from '@sveltejs/kit'
 import { ClientResponseError } from 'pocketbase'
 
 export async function load({ locals, url }) {
-	if (!locals.pb.authStore.model) throw error(401, 'login pls')
+	authGuard(locals.pb)
 
 	const page = +(url.searchParams.get('page') || 0)
 	if (isNaN(page)) return error(400, 'page is NaN')

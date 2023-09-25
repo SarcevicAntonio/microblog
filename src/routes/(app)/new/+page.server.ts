@@ -1,8 +1,8 @@
-import { error, redirect } from '@sveltejs/kit'
+import { authGuard } from '$lib/auth.js'
+import { redirect } from '@sveltejs/kit'
 
-export async function load({ parent }) {
-	const data = await parent()
-	if (!data.user) throw error(401, 'login pls')
+export async function load({ locals }) {
+	authGuard(locals.pb)
 }
 
 export const actions = {

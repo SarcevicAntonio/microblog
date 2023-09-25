@@ -1,5 +1,13 @@
-<form method="POST">
-	<textarea name="body" />
-	<button>post</button>
+<form method="POST" class="main-form">
+	<h1>✏️ new post</h1>
+	<textarea name="body" placeholder="write something inspiring..." />
+	<button>📮 post</button>
 </form>
-<a href="/">👈 back</a>
+
+<style>
+	textarea {
+		min-height: 30rem;
+		font: inherit;
+		padding: 1rem;
+	}
+</style>
