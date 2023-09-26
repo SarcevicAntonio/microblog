@@ -12,16 +12,17 @@
 {#if !data.post}
 	<p>❌ no post found</p>
 {:else}
-	<div class="post-box">
-		<article>
-			<aside>
-				<a href="/{data.post.id}">
-					<time datetime={data.post.created}>{new Date(data.post.created).toLocaleString()}</time>
-				</a>
-			</aside>
-			{@html render_markdown(data.post.body)}
-		</article>
-	</div>
+	{#if data.parent}
+		<a href="/{data.parent.id}">parent</a>
+	{/if}
+	<article class="post-box">
+		<aside>
+			<a href="/{data.post.id}">
+				<time datetime={data.post.created}>{new Date(data.post.created).toLocaleString()}</time>
+			</a>
+		</aside>
+		{@html render_markdown(data.post.body)}
+	</article>
 
 	<nav>
 		<a href="/{data.post.id}/reply" class:active={pathname.endsWith('/reply')}>🧵 reply</a>

@@ -3,8 +3,13 @@ export async function load({ locals, params }) {
 
 	try {
 		const post = await locals.pb.collection('posts').getOne(params.id)
+		let parent
+		if (post.parent) {
+			parent = await locals.pb.collection('posts').getOne(post.parent)
+		}
 		return {
 			post: structuredClone(post),
+			parent: structuredClone(parent),
 		}
 	} catch (e) {
 		return

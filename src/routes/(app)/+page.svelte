@@ -5,7 +5,7 @@
 
 <h1>📜 feed</h1>
 {#if data?.post_list?.items?.length}
-	<ul>
+	<ul class="feed">
 		{#each data.post_list.items as { created, body, id }}
 			<li class="post-box">
 				<article>
@@ -22,13 +22,3 @@
 {:else}
 	<p>❌ no posts yet</p>
 {/if}
-
-<style>
-	ul {
-		list-style: none;
-		padding: 0rem;
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-	}
-</style>
