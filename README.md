@@ -5,8 +5,8 @@ fuck that musk, run your own microblog
 ## TODO
 
 - [ ] deploy docs
-- [ ] thread support
-   - [ ] reference parent
+- [x] thread support
+   - [x] reference parent
    - [ ] make thread view
    - [ ] mark threads in timeline
 

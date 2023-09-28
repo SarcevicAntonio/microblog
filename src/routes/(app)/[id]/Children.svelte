@@ -1,6 +1,6 @@
 <script>
-	import Children from './Children.svelte'
 	import { render_markdown } from '$lib/markdown'
+	import Children from './Children.svelte'
 
 	export let children
 </script>
@@ -25,7 +25,7 @@
 
 <style>
 	.feed {
-		margin-inline-start: 1rem;
 		gap: 0;
+		border-inline-start: 0.25rem solid var(--accent);
 	}
 </style>
